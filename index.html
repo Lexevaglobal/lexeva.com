@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LEXEVA | Legal Admissions & Academic Writing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ink: #111715;
+      --ink-soft: #26302d;
+      --gold: #c9a24a;
+      --gold-light: #d6b15d;
+      --ivory: #f7f4ee;
+      --mist: #ece8e1;
+      --gray: #5e625f;
+      --line: rgba(17, 23, 21, 0.14);
+      --white-soft: rgba(247, 244, 238, 0.86);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 80% 8%, rgba(201, 162, 74, 0.12), transparent 32%),
+        linear-gradient(180deg, #fbfaf7 0%, var(--ivory) 40%, #f1ede5 100%);
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7vw;
+      background: rgba(247, 244, 238, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(17, 23, 21, 0.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      position: relative;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      background: var(--gold);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .brand-mark::before {
+      top: 1px;
+      width: 7px;
+      height: 24px;
+      clip-path: polygon(50% 0%, 100% 30%, 58% 100%, 42% 100%, 0% 30%);
+    }
+
+    .brand-mark::after {
+      top: 12px;
+      width: 28px;
+      height: 6px;
+      clip-path: polygon(0 50%, 18% 0, 82% 0, 100% 50%, 82% 100%, 18% 100%);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 6px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+      padding: 150px 7vw 90px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(56px, 8vw, 112px);
+      line-height: 0.91;
+      margin-bottom: 30px;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: var(--gray);
+      margin-bottom: 38px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: var(--ivory);
+      border-color: var(--ink);
+    }
+
+    .btn.primary:hover {
+      background: var(--gold);
+      color: var(--ink);
+      border-color: var(--gold);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 540px;
+      border: 1px solid rgba(17, 23, 21, 0.14);
+      background:
+        linear-gradient(145deg, rgba(17, 23, 21, 0.96), rgba(25, 34, 31, 0.94)),
+        radial-gradient(circle at 50% 20%, rgba(201, 162, 74, 0.3), transparent 40%);
+      color: var(--ivory);
+      padding: 46px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(17, 23, 21, 0.18);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -110px;
+      right: -120px;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(201, 162, 74, 0.34);
+      border-radius: 50%;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      bottom: -130px;
+      left: -120px;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(247, 244, 238, 0.1);
+      border-radius: 50%;
+    }
+
+    .card-logo {
+      position: relative;
+      z-index: 2;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 54px;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+    }
+
+    .card-logo span {
+      color: var(--gold);
+    }
+
+    .card-statement {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(201, 162, 74, 0.38);
+      padding-top: 30px;
+    }
+
+    .card-statement p:first-child {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .card-statement p:last-child {
+      color: var(--white-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 110px 7vw;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 70px;
+      margin-bottom: 64px;
+      align-items: start;
+    }
+
+    .section-number {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: 0.98;
+      max-width: 850px;
+    }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: stretch;
+    }
+
+    .about-text {
+      padding: 48px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .about-text p {
+      color: var(--gray);
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-quote {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-quote::before {
+      content: "LEXEVA";
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 110px;
+      letter-spacing: 0.05em;
+      color: rgba(247, 244, 238, 0.04);
+    }
+
+    .quote-mark {
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 90px;
+      line-height: 0.5;
+    }
+
+    .about-quote h3 {
+      font-size: 42px;
+      line-height: 1.08;
+      max-width: 460px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-quote p {
+      color: var(--white-soft);
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services {
+      background: var(--mist);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      min-height: 380px;
+      padding: 34px;
+      background: rgba(247, 244, 238, 0.7);
+      border: 1px solid rgba(17, 23, 21, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(201, 162, 74, 0.85);
+      background: rgba(247, 244, 238, 0.96);
+    }
+
+    .service-index {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 70px;
+    }
+
+    .service-card h3 {
+      font-size: 34px;
+      line-height: 1.04;
+      margin-bottom: 22px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .approach {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .approach h2 {
+      margin-bottom: 28px;
+    }
+
+    .approach p {
+      color: var(--gray);
+      font-size: 17px;
+      line-height: 1.9;
+      max-width: 620px;
+    }
+
+    .process-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+
+    .process-item span {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .process-item strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .contact {
+      background: var(--ink);
+      color: var(--ivory);
+      padding-bottom: 60px;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      margin-bottom: 26px;
+    }
+
+    .contact p {
+      color: var(--white-soft);
+      font-size: 18px;
+      line-height: 1.85;
+      max-width: 640px;
+    }
+
+    .contact-panel {
+      border: 1px solid rgba(201, 162, 74, 0.34);
+      padding: 38px;
+      background: rgba(247, 244, 238, 0.035);
+    }
+
+    .contact-row {
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(247, 244, 238, 0.14);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-row small {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    .contact-row a,
+    .contact-row span {
+      color: var(--ivory);
+      font-size: 17px;
+    }
+
+    .contact .btn {
+      margin-top: 34px;
+      border-color: var(--gold);
+      color: var(--ink);
+      background: var(--gold);
+    }
+
+    .contact .btn:hover {
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(247, 244, 238, 0.55);
+      display: flex;
+      justify-content: space-between;
+      padding: 32px 7vw;
+      border-top: 1px solid rgba(247, 244, 238, 0.12);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-head,
+      .about-body,
+      .approach,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 420px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 18px 24px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .hero,
+      section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      h1 {
+        font-size: 54px;
+      }
+
+      .hero-copy,
+      .contact p {
+        font-size: 16px;
+      }
+
+      .about-text,
+      .about-quote,
+      .contact-panel,
+      .service-card {
+        padding: 28px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="#top" class="brand" aria-label="LEXEVA Home">
+        <span>LEXEVA</span>
+        <span class="brand-mark" aria-hidden="true"></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div>
+        <div class="eyebrow">Boutique Legal Admissions Studio</div>
+
+        <h1>Strategic writing for ambitious law school applicants.</h1>
+
+        <p class="hero-copy">
+          LEXEVA helps applicants pursuing LLM, JD, MJur and law-related postgraduate programmes build application materials with academic depth, legal reasoning and a credible professional narrative.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Submit Your Background</a>
+          <a class="btn secondary" href="#services">Explore Services</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="card-logo">LEX<span>E</span>VA</div>
+
+        <div class="card-statement">
+          <p>Not just polished language. A complete admissions argument.</p>
+          <p>
+            We work at the level where experience, legal curiosity, school fit and long-term career direction become one coherent application story.
+          </p>
+        </div>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="section-head">
+        <div class="section-number">01 / About Us</div>
+        <h2>A boutique approach to legal admissions and academic writing.</h2>
+      </div>
+
+      <div class="about-body">
+        <div class="about-text">
+          <p>
+            LEXEVA is designed for applicants who want more than a standard personal statement. We help candidates clarify their legal interests, structure their experiences and present themselves with intellectual credibility.
+          </p>
+
+          <p>
+            Our work focuses on the architecture of an application: why this legal field, why this programme, why this candidate, and why this future path makes sense.
+          </p>
+
+          <p>
+            Instead of producing generic education-agency language, we build materials around legal reasoning, faculty and curriculum alignment, and a persuasive academic narrative.
+          </p>
+        </div>
+
+        <div class="about-quote">
+          <div class="quote-mark">“</div>
+
+          <h3>Every strong application begins with a clear argument.</h3>
+
+          <p>
+            The goal is not to decorate a background, but to make the applicant's trajectory legible, rigorous and convincing to a law school audience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head">
+        <div class="section-number">02 / Our Services</div>
+        <h2>Structured support for serious law school applications.</h2>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div>
+            <div class="service-index">Service 01</div>
+            <h3>Personal Statement Strategy</h3>
+          </div>
+
+          <p>
+            We identify the strongest application angle, connect your academic and professional experiences, and build a personal statement structure with legal depth and school-specific relevance.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div>
+            <div class="service-index">Service 02</div>
+            <h3>Application Material Revision</h3>
+          </div>
+
+          <p>
+            We revise personal statements, CVs, recommendation letter strategy and supporting documents to strengthen logic, precision, tone and overall admissions persuasiveness.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div>
+            <div class="service-index">Service 03</div>
+            <h3>School & Career Positioning</h3>
+          </div>
+
+          <p>
+            We help applicants select target programmes, frame career goals and align their background with legal fields such as AI law, IP, corporate law, compliance and law & technology.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div>
+        <div class="eyebrow">Our Method</div>
+
+        <h2>From background to narrative.</h2>
+
+        <p>
+          A law school application is not a list of experiences. It is a disciplined argument about intellectual direction, legal potential and programme fit. Our process turns fragmented materials into a coherent admissions case.
+        </p>
+      </div>
+
+      <div class="process-list">
+        <div class="process-item">
+          <span>Step 01</span>
+          <strong>Background Review</strong>
+        </div>
+
+        <div class="process-item">
+          <span>Step 02</span>
+          <strong>Application Strategy</strong>
+        </div>
+
+        <div class="process-item">
+          <span>Step 03</span>
+          <strong>Programme Research</strong>
+        </div>
+
+        <div class="process-item">
+          <span>Step 04</span>
+          <strong>Drafting & Revision</strong>
+        </div>
+
+        <div class="process-item">
+          <span>Step 05</span>
+          <strong>Final Delivery</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div>
+          <div class="eyebrow">03 / Contact Us</div>
+
+          <h2>Start with your story.</h2>
+
+          <p>
+            Send us your CV, academic background, target programmes, application timeline and any existing draft materials. We will review the core direction and discuss the most suitable next step.
+          </p>
+
+          <a class="btn" href="mailto:contact@lexeva.co">Book an Initial Consultation</a>
+        </div>
+
+        <div class="contact-panel">
+          <div class="contact-row">
+            <small>Email</small>
+            <a href="mailto:contact@lexeva.co">contact@lexeva.co</a>
+          </div>
+
+          <div class="contact-row">
+            <small>WeChat</small>
+            <span>Add your WeChat ID / QR Code here</span>
+          </div>
+
+          <div class="contact-row">
+            <small>Inquiry</small>
+            <span>CV · Transcript · Target Schools · Application Year · Draft Materials</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 LEXEVA. All rights reserved.</span>
+      <span>Legal Admissions · Academic Writing · Career Strategy</span>
+    </footer>
+  </div>
+</body>
+</html>
