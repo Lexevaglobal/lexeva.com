@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>LEXEVA | Private Law School Application Atelier</title>
-  <meta name="description" content="LEXEVA provides high-end bespoke law school application strategy, research-led legal writing, personal statement revision and application support for LLM, JD and MJur applicants." />
+  <title>LEXEVA | High-end Bespoke Law School Application Writing</title>
+  <meta name="description" content="LEXEVA provides high-end bespoke law school application strategy, research-led legal writing, personal statement revision and law school application support for LLM, JD and MJur applicants." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.lexevaglobal.com/" />
 
@@ -123,7 +122,7 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 26px;
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -229,7 +228,7 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.04fr 0.96fr;
       align-items: center;
       gap: 62px;
       padding: 138px 7vw 92px;
@@ -237,8 +236,8 @@
     }
 
     h1 {
-      max-width: 880px;
-      font-size: clamp(54px, 7.4vw, 106px);
+      max-width: 900px;
+      font-size: clamp(54px, 7.1vw, 102px);
       line-height: 0.92;
       margin-bottom: 30px;
     }
@@ -250,7 +249,7 @@
     }
 
     .hero-copy {
-      max-width: 700px;
+      max-width: 720px;
       font-size: 18px;
       line-height: 1.86;
       color: var(--gray);
@@ -301,11 +300,21 @@
       color: var(--gold);
     }
 
+    .bespoke-strip {
+      margin-top: 26px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(255,255,255,0.45);
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.85;
+      max-width: 760px;
+    }
+
     .hero-visual {
       position: relative;
-      min-height: 560px;
+      min-height: 580px;
       border: 1px solid rgba(17, 23, 21, 0.14);
-      color: var(--ivory);
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--ink);
@@ -334,50 +343,39 @@
         radial-gradient(circle at 72% 18%, rgba(201, 162, 74, 0.18), transparent 34%);
     }
 
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: -130px;
-      right: -140px;
-      width: 320px;
-      height: 320px;
-      border: 1px solid rgba(201, 162, 74, 0.38);
-      border-radius: 50%;
-    }
-
     .visual-logo-box {
       position: relative;
       z-index: 2;
-      background: rgba(247, 244, 238, 0.96);
-      padding: 28px;
-      width: min(340px, 100%);
-      border: 1px solid rgba(201, 162, 74, 0.45);
+      background: rgba(247, 244, 238, 0.92);
+      padding: 6px 10px;
+      width: min(380px, 84%);
+      border: 1px solid rgba(201, 162, 74, 0.55);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+      backdrop-filter: blur(6px);
     }
 
     .visual-logo-box img {
       width: 100%;
       height: auto;
-      object-fit: contain;
+      display: block;
     }
 
     .visual-statement {
-      position: relative;
-      z-index: 2;
       border-top: 1px solid rgba(201, 162, 74, 0.38);
-      padding-top: 30px;
+      padding-top: 22px;
+      color: var(--ivory);
     }
 
     .visual-statement p:first-child {
       font-family: "Cormorant Garamond", "Noto Serif SC", serif;
-      font-size: 36px;
+      font-size: 34px;
       line-height: 1.12;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .visual-statement p:last-child {
       color: var(--white-soft);
-      line-height: 1.85;
+      line-height: 1.8;
       font-size: 15px;
     }
 
@@ -433,7 +431,7 @@
     }
 
     .team-intro-copy {
-      padding: 48px;
+      padding: 40px;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.36);
     }
@@ -442,7 +440,6 @@
       color: var(--gray);
       font-size: 17px;
       line-height: 1.95;
-      max-width: 980px;
     }
 
     .team-intro-image {
@@ -462,7 +459,8 @@
 
     .team-grid,
     .service-grid,
-    .proof-grid {
+    .proof-grid,
+    .faq-grid {
       display: grid;
       gap: 22px;
     }
@@ -474,7 +472,8 @@
     .team-card,
     .service-card,
     .proof-card,
-    .price-card {
+    .faq-item,
+    .offer-card {
       background: rgba(247, 244, 238, 0.74);
       border: 1px solid rgba(17, 23, 21, 0.12);
       transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
@@ -483,14 +482,14 @@
     .team-card:hover,
     .service-card:hover,
     .proof-card:hover,
-    .price-card:hover {
+    .offer-card:hover {
       transform: translateY(-6px);
       border-color: rgba(201, 162, 74, 0.86);
       background: rgba(247, 244, 238, 0.98);
     }
 
     .team-card {
-      min-height: 520px;
+      min-height: 540px;
       padding: 34px;
       display: flex;
       flex-direction: column;
@@ -514,7 +513,9 @@
 
     .team-card h3,
     .service-card h3,
-    .proof-card h3 {
+    .proof-card h3,
+    .faq-item h3,
+    .offer-card h3 {
       font-size: 34px;
       line-height: 1.04;
       margin-bottom: 12px;
@@ -538,7 +539,9 @@
 
     .team-card p,
     .service-card p,
-    .proof-card p {
+    .proof-card p,
+    .faq-item p,
+    .offer-card p {
       color: var(--gray);
       line-height: 1.86;
       font-size: 16px;
@@ -596,41 +599,40 @@
       max-width: 920px;
     }
 
-    .pricing {
+    .offer {
       background: var(--ivory);
       border-bottom: 1px solid var(--line);
     }
 
-    .price-card {
-      padding: 44px;
+    .offer-card {
+      padding: 42px;
       background: linear-gradient(135deg, rgba(17,23,21,0.98), rgba(30,39,36,0.96));
       color: var(--ivory);
-      border: 1px solid rgba(201, 162, 74, 0.34);
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
 
-    .price-card::after {
+    .offer-card::after {
       content: "EARLY BIRD";
       position: absolute;
-      top: 22px;
-      right: -38px;
+      top: 20px;
+      right: -36px;
       transform: rotate(35deg);
       background: var(--gold);
       color: var(--ink);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.12em;
-      padding: 8px 44px;
+      padding: 8px 40px;
     }
 
-    .price-card h3,
-    .price-card p {
+    .offer-card h3,
+    .offer-card p {
       color: var(--ivory);
     }
 
-    .price-row {
+    .discount-row {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
@@ -638,24 +640,24 @@
       margin: 28px 0 18px;
     }
 
-    .price-old {
-      font-size: 22px;
-      color: rgba(247,244,238,0.5);
-      text-decoration: line-through;
-    }
-
-    .price-new {
+    .discount-main {
       font-size: 58px;
       line-height: 1;
       font-family: "Cormorant Garamond", "Noto Serif SC", serif;
       color: var(--gold-light);
     }
 
-    .price-label {
+    .discount-label {
       font-size: 13px;
       color: rgba(247,244,238,0.76);
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .offer-note {
+      color: rgba(247,244,238,0.8) !important;
+      margin-top: 18px;
+      max-width: 860px;
     }
 
     .proof {
@@ -689,10 +691,11 @@
 
     .proof-grid {
       grid-template-columns: repeat(3, 1fr);
+      margin-top: 40px;
     }
 
     .proof-card {
-      min-height: 410px;
+      min-height: 450px;
       padding: 34px;
       background: rgba(247, 244, 238, 0.04);
       border-color: rgba(247, 244, 238, 0.14);
@@ -749,7 +752,6 @@
     }
 
     .faq-grid {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
@@ -757,19 +759,12 @@
     .faq-item {
       padding: 30px;
       background: rgba(255, 255, 255, 0.42);
-      border: 1px solid rgba(17, 23, 21, 0.12);
     }
 
     .faq-item h3 {
       font-size: 28px;
       line-height: 1.16;
       margin-bottom: 14px;
-    }
-
-    .faq-item p {
-      color: var(--gray);
-      line-height: 1.85;
-      font-size: 16px;
     }
 
     .contact {
@@ -896,6 +891,10 @@
         grid-template-columns: 1fr;
       }
 
+      .team-intro {
+        grid-template-columns: 1fr;
+      }
+
       .team-card,
       .service-card,
       .proof-card {
@@ -907,14 +906,6 @@
       .hero,
       .section-head,
       .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: 460px;
-      }
-
-      .team-intro {
         grid-template-columns: 1fr;
       }
 
@@ -962,12 +953,18 @@
       .service-card,
       .proof-card,
       .contact-box,
-      .contact-panel {
+      .contact-panel,
+      .faq-item,
+      .offer-card {
         padding: 28px;
       }
 
-      .visual-logo-box {
-        padding: 18px;
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .discount-main {
+        font-size: 46px;
       }
 
       footer {
@@ -982,7 +979,6 @@
   <div class="page">
     <nav class="nav">
       <a href="#top" class="brand" aria-label="LEXEVA Home">
-        <!-- Upload your real logo to GitHub as: assets/lexeva-logo.jpg -->
         <img src="assets/lexeva-logo.jpg" alt="LEXEVA logo" />
       </a>
 
@@ -990,8 +986,8 @@
         <div class="nav-links">
           <a href="#about"><span class="en">About</span><span class="zh">团队</span></a>
           <a href="#services"><span class="en">Services</span><span class="zh">服务</span></a>
-          <a href="#pricing"><span class="en">Pricing</span><span class="zh">价格</span></a>
-          <a href="#proof"><span class="en">Proof</span><span class="zh">案例</span></a>
+          <a href="#offer"><span class="en">Offer</span><span class="zh">优惠</span></a>
+          <a href="#proof"><span class="en">Proof</span><span class="zh">评价</span></a>
           <a href="#faq"><span class="en">FAQ</span><span class="zh">问答</span></a>
           <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
         </div>
@@ -1011,29 +1007,28 @@
     <header class="hero" id="top">
       <div>
         <div class="eyebrow">
-          <span class="en">Private Law School Application Atelier</span>
-          <span class="zh">法学院申请私人定制工作室</span>
+          <span class="en">High-end Bespoke Law School Applications</span>
+          <span class="zh">高端定制法学院申请</span>
         </div>
 
         <h1>
-          <span class="en">Law school applications, written with depth.</span>
-          <span class="zh">有深度的法学院申请文书。</span>
+          <span class="en">The most in-depth law school application writing we can build.</span>
+          <span class="zh">最有深度的法学院申请文书。</span>
         </h1>
 
         <p class="hero-copy">
-          <span class="en">Research-led strategy. Bespoke writing. Unlimited school adaptation for full-package clients.</span>
-          <span class="zh">研究驱动，高端定制。申请全案不限学校数量。</span>
+          <span class="en">LEXEVA supports LLM, JD, MJur and law-related postgraduate applicants through legal research, programme analysis, personal statement strategy and academically rigorous application writing. Our full application package is not limited by the number of schools.</span>
+          <span class="zh">LEXEVA为申请LLM、JD、MJur及相关法学硕士项目的学生提供研究型文书写作与申请策略支持。我们的申请全案不限学校数量，不是模板化批量生产，而是围绕每位申请者的经历与目标做高端定制。</span>
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">
-            <span class="en">Book a Free 15-Min Call</span>
-            <span class="zh">预约免费15分钟咨询</span>
-          </a>
-          <a class="btn secondary" href="#services">
-            <span class="en">Explore Services</span>
-            <span class="zh">查看服务内容</span>
-          </a>
+          <a class="btn primary" href="#contact"><span class="en">Book a Free 15-Min Call</span><span class="zh">预约免费15分钟咨询</span></a>
+          <a class="btn secondary" href="#services"><span class="en">Explore Services</span><span class="zh">查看服务内容</span></a>
+        </div>
+
+        <div class="bespoke-strip">
+          <span class="en">Every application is handled as a bespoke strategy project: legal issue framing, programme research, narrative architecture and document adaptation — not mass-produced editing.</span>
+          <span class="zh">每一份申请，我们都按“高端定制项目”来处理：从法律问题提炼、项目研究、叙事结构搭建，到多学校文书适配，重点不是批量修改，而是为你建立一套真正讲得通的申请论证。</span>
         </div>
       </div>
 
@@ -1045,46 +1040,28 @@
           </div>
 
           <div class="visual-statement">
-          <p>
-            <span class="en">Depth is the strategy.</span>
-            <span class="zh">深度本身，就是策略。</span>
-          </p>
-          <p>
-            <span class="en">Not a polished biography. A legal admissions argument.</span>
-            <span class="zh">不是精致履历，而是一套申请论证。</span>
-          </p>
-        </div>
+            <p><span class="en">Depth comes from research, not decoration.</span><span class="zh">深度来自研究，而不是包装。</span></p>
+            <p><span class="en">A strong application is not a decorated biography. It is a disciplined argument about intellectual direction, legal potential and programme fit.</span><span class="zh">真正有效的申请材料，不是精致包装过的经历清单，而是一套关于学术方向、法律潜力和项目匹配度的申请论证。</span></p>
+          </div>
         </div>
       </aside>
     </header>
 
     <section id="about">
       <div class="section-head">
-        <div class="section-number">
-          <span class="en">01 / About & Team</span>
-          <span class="zh">01 / 关于团队</span>
-        </div>
+        <div class="section-number"><span class="en">01 / About & Team</span><span class="zh">01 / 关于团队</span></div>
         <div>
-          <h2>
-            <span class="en">A small atelier for serious applicants.</span>
-            <span class="zh">一个服务严肃申请者的小型精品工作室。</span>
-          </h2>
-          <p class="lead">
-            <span class="en">Selective by design. Research-heavy by method.</span>
-            <span class="zh">有限承接，深度研究，不做流水线文书。</span>
-          </p>
+          <h2><span class="en">Small team. High-touch process. Bespoke legal admissions work.</span><span class="zh">小型团队，高密度跟进，高端定制申请服务。</span></h2>
+          <p class="lead"><span class="en">LEXEVA is a Singapore-based boutique team for law school application strategy, legal writing and career positioning. We work in depth, not in volume.</span><span class="zh">LEXEVA是一支总部位于新加坡的小型精品法律申请与职业路径规划团队。我们追求的不是批量交付，而是高密度研究、高质量判断和真正有深度的申请材料。</span></p>
         </div>
       </div>
 
       <div class="team-intro">
         <div class="team-intro-copy">
-          <p>
-          <span class="en">Top legal education. Magic Circle exposure. International organisation experience. Singapore legal practice. PRC qualification. Advocacy training. Interdisciplinary insight. We turn experience into legal persuasion.</span>
-          <span class="zh">顶尖法学教育、魔圈所经历、国际组织经历、新加坡法律实务、中国大陆律师资格、模拟法庭训练与跨学科经验。我们把经历转化为法律说服力。</span>
-        </p>
+          <p><span class="en">The team brings together international legal education, Magic Circle law firm experience, international organisation exposure, Singapore-based cross-border legal practice, PRC legal qualification, advocacy training, data protection credentials and interdisciplinary industry experience. We believe a strong law school application should feel intellectually serious, highly tailored and deeply considered.</span><span class="zh">我们的团队结合了海外法学教育、魔圈所经历、国际组织经历、新加坡跨境法律实务、中国大陆律师执业经验、模拟法庭与辩论训练、数据保护资质及医药化工等跨学科背景。我们相信，真正强的法学院申请材料，应当同时具备学术严肃性、个性化定制感和高度思考后的完成度。</span></p>
         </div>
         <div class="team-intro-image">
-          <img src="assets/team-detail.jpg" alt="LEXEVA research and team detail" />
+          <img src="assets/team-detail.jpg" alt="LEXEVA team research detail" />
         </div>
       </div>
 
@@ -1092,21 +1069,12 @@
         <article class="team-card featured">
           <div>
             <div class="card-index"><span class="en">Lead Consultant</span><span class="zh">主理人</span></div>
-            <h3><span class="en">LEXEVA Lead Consultant</span><span class="zh">LEXEVA主理人</span></h3>
+            <h3>Lex Eva</h3>
             <div class="role"><span class="en">Lead Law School Application & Legal Writing Consultant</span><span class="zh">首席法学院申请与法律写作顾问</span></div>
-            <p>
-              <span class="en">QS Top 10 law school LLM. Magic Circle law firm experience. International organisation exposure. EXIN-certified Data Protection Officer. Singapore-based legal counsel.</span>
-              <span class="zh">QS世界前十法学院LLM。魔圈所经历。国际组织经历。EXIN认证数据保护官。现任新加坡跨国企业法律顾问。</span>
-            </p>
-            <p>
-              <span class="en">He leads the legal research, argument structure, issue framing and final quality control behind each serious application.</span>
-              <span class="zh">负责每一份严肃申请背后的法学研究、论证结构、问题提炼与最终质量把控。</span>
-            </p>
+            <p><span class="en">Lex Eva holds an LLM from a QS Top 10 law school, has Magic Circle law firm experience and international organisation exposure, is an EXIN-certified Data Protection Officer, and currently works as a Singapore-based legal counsel in a cross-border corporate environment.</span><span class="zh">Lex Eva毕业于QS世界前十法学院LLM项目，具备魔圈所经历与国际组织经历，持有EXIN认证数据保护官资质，现于新加坡担任跨国企业法律顾问，长期处理跨境法律、合规、数据保护与商业法律事务。</span></p>
+            <p><span class="en">At LEXEVA, he leads legal research support, argument structure, case and academic issue framing, and quality control over the legal analysis in writing samples and personal statements.</span><span class="zh">在LEXEVA的申请服务中，Lex Eva负责最核心的法学研究支持、文书论证结构、案例与学术问题提炼，以及writing sample和PS中法律分析部分的质量把控。</span></p>
           </div>
-          <div class="team-line">
-            <span class="en">Find the legal question. The narrative follows.</span>
-            <span class="zh">先找到法律问题，叙事自然成立。</span>
-          </div>
+          <div class="team-line"><span class="en">Ordinary experience can become legally persuasive when the right question is found.</span><span class="zh">看似普通的实习、课程或研究经历，只要找到真正的法律问题，也可以转化为有学术说服力的表达。</span></div>
         </article>
 
         <article class="team-card">
@@ -1114,19 +1082,10 @@
             <div class="card-index"><span class="en">Student Development</span><span class="zh">背景提升</span></div>
             <h3>Lex Fei</h3>
             <div class="role"><span class="en">Student Development & Legal Training Consultant</span><span class="zh">在校法学生背景提升与法律训练顾问</span></div>
-            <p>
-              <span class="en">Cambridge LLM. PRC-qualified lawyer. National award winner in moot court and debate. Former team leader and coach for award-winning university teams.</span>
-              <span class="zh">剑桥大学LLM，中国大陆执业律师。曾获多个国家级模拟法庭与辩论赛奖项，并以队长、教练身份带队取得全国前三成绩。</span>
-            </p>
-            <p>
-              <span class="en">He supports current law students before the application season: competition planning, advocacy training, internship strategy and early-stage profile building.</span>
-              <span class="zh">负责在校法学生申请季前的长期建设：竞赛规划、表达训练、实习布局与早期背景提升。</span>
-            </p>
+            <p><span class="en">Lex Fei holds an LLM from the University of Cambridge and is a PRC-qualified lawyer with a focus on corporate and commercial law. During his legal training, he received multiple national-level awards in moot court and debate competitions, and later served as team leader and coach for award-winning university teams.</span><span class="zh">Lex Fei毕业于剑桥大学LLM项目，是中国大陆执业律师，主要关注公司法与商事法律事务。学生时期曾获得多个国家级模拟法庭竞赛与辩论赛奖项，并多次以队长、教练身份带队取得全国前三成绩。</span></p>
+            <p><span class="en">At LEXEVA, he focuses on student development and pre-application preparation for current law students, including moot court and debate training, competition planning, internship and research experience development, and early-stage background building.</span><span class="zh">在LEXEVA中，Lex Fei主要负责在校法学生的背景提升规划，包括模拟法庭与辩论训练、法学竞赛路径设计、实习与科研经历布局、低年级法学生申请前准备，以及法律表达和论证能力训练。</span></p>
           </div>
-          <div class="team-line">
-            <span class="en">Strong applications are built before the application season.</span>
-            <span class="zh">真正强的申请，往往在申请季之前就已经开始积累。</span>
-          </div>
+          <div class="team-line"><span class="en">Strong applications are built before the application season.</span><span class="zh">真正强的申请，往往在申请季之前就已经开始积累。</span></div>
         </article>
 
         <article class="team-card">
@@ -1134,176 +1093,83 @@
             <div class="card-index"><span class="en">Interdisciplinary Support</span><span class="zh">跨学科支持</span></div>
             <h3>Lex Alice</h3>
             <div class="role"><span class="en">Cross-disciplinary Research & Bilingual Communication Consultant</span><span class="zh">跨学科研究与双语表达顾问</span></div>
-            <p>
-              <span class="en">NUS and German dual-degree background. Native-level Chinese-English communication. Deep exposure to pharmaceutical and chemical matters.</span>
-              <span class="zh">新加坡国立大学与德国高校双学位背景。母语级中英双语能力。长期深耕医药化工相关事务。</span>
-            </p>
-            <p>
-              <span class="en">She translates interdisciplinary experience into legal language: technical, commercial, regulatory and industry-facing backgrounds.</span>
-              <span class="zh">负责将跨学科经历转译为法律语言：技术、商业、监管与行业经验。</span>
-            </p>
+            <p><span class="en">Lex Alice holds a dual-degree background from the National University of Singapore and a German university, with native-level bilingual ability in Chinese and English. She has deep experience in pharmaceutical and chemical-related matters.</span><span class="zh">Lex Alice拥有新加坡国立大学与德国高校双学位背景，具备母语级中英双语能力，并长期深耕医药化工相关事务。</span></p>
+            <p><span class="en">She supports applicants with cross-disciplinary backgrounds, especially those from science, healthcare, pharmaceutical, commercial or regulatory contexts, translating technical and industry experience into clear legal admissions language.</span><span class="zh">在LEXEVA中，Lex Alice主要负责跨学科申请者的背景梳理、行业材料理解、双语表达优化和申请叙事辅助，帮助申请者将技术、产业与监管经验转化为法学院能够理解的法律语言。</span></p>
           </div>
-          <div class="team-line">
-            <span class="en">Interdisciplinary experience needs translation, not decoration.</span>
-            <span class="zh">跨学科经历需要被转译，而不是被包装。</span>
-          </div>
+          <div class="team-line"><span class="en">Interdisciplinary experience needs translation, not decoration.</span><span class="zh">跨学科经历需要被转译，而不是被包装。</span></div>
         </article>
       </div>
     </section>
 
     <section class="services" id="services">
       <div class="section-head">
-        <div class="section-number">
-          <span class="en">02 / Services</span>
-          <span class="zh">02 / 服务内容</span>
-        </div>
-        <h2>
-          <span class="en">Bespoke support. No wasted language.</span>
-          <span class="zh">定制支持，不浪费一句话。</span>
-        </h2>
+        <div class="section-number"><span class="en">02 / Services</span><span class="zh">02 / 服务内容</span></div>
+        <h2><span class="en">Three high-end bespoke ways we support law school applicants.</span><span class="zh">三类高端定制服务，支持不同阶段的法学院申请者。</span></h2>
       </div>
 
       <div class="service-grid">
         <article class="service-card">
-          <div>
-            <div class="card-index"><span class="en">Service 01</span><span class="zh">服务 01</span></div>
-            <h3><span class="en">Law School Application Package</span><span class="zh">法学院申请全案</span></h3>
-          </div>
-          <p><span class="en">PS, CV, recommendation strategy, school positioning and unlimited programme adaptation.</span><span class="zh">PS、CV、推荐信思路、项目定位与不限学校数量的多项目适配。</span></p>
+          <div><div class="card-index"><span class="en">Service 01</span><span class="zh">服务 01</span></div><h3><span class="en">Law School Application Package</span><span class="zh">法学院申请全案</span></h3></div>
+          <p><span class="en">Personal statement strategy, CV restructuring, recommendation letter guidance, programme positioning and school-specific document adaptation. No school-number cap applies to the full package.</span><span class="zh">包括PS主线设计、CV重构、推荐信思路、项目定位、多学校文书适配和整体申请策略判断。申请全案不限学校数量，适合同时申请多个地区和多个项目的同学。</span></p>
         </article>
 
         <article class="service-card">
-          <div>
-            <div class="card-index"><span class="en">Service 02</span><span class="zh">服务 02</span></div>
-            <h3><span class="en">Personal Statement Deep Revision</span><span class="zh">PS深度修改</span></h3>
-          </div>
-          <p><span class="en">For drafts that sound correct but lack force, direction or intellectual control.</span><span class="zh">适合看起来没错，却缺少力量、方向和学术控制感的初稿。</span></p>
+          <div><div class="card-index"><span class="en">Service 02</span><span class="zh">服务 02</span></div><h3><span class="en">Personal Statement Deep Revision</span><span class="zh">PS深度修改</span></h3></div>
+          <p><span class="en">For applicants with an existing draft who need stronger structure, deeper legal reasoning, clearer academic positioning and less template-driven language.</span><span class="zh">适合已经有初稿，但主线不清、学术深度不足、经历与项目连接不自然，或者文风过于模板化的申请人。</span></p>
         </article>
 
         <article class="service-card">
-          <div>
-            <div class="card-index"><span class="en">Service 03</span><span class="zh">服务 03</span></div>
-            <h3><span class="en">Application Strategy Consultation</span><span class="zh">申请策略咨询</span></h3>
-          </div>
-          <p><span class="en">For applicants who need judgment before writing: schools, timing, risk and career logic.</span><span class="zh">适合写作前先判断：学校、时间线、风险与职业逻辑。</span></p>
+          <div><div class="card-index"><span class="en">Service 03</span><span class="zh">服务 03</span></div><h3><span class="en">Application Strategy Consultation</span><span class="zh">申请策略咨询</span></h3></div>
+          <p><span class="en">School selection, programme positioning, background diagnosis, pre-application planning and career-path framing for applicants who need a clearer direction.</span><span class="zh">围绕选校定位、项目方向、背景诊断、申请风险、申请前规划和法律职业路径展开咨询。</span></p>
         </article>
       </div>
 
-      <p class="service-note">
-        <span class="en">Full-package clients are not charged by school count. One strong core narrative. Precise adaptation.</span>
-        <span class="zh">申请全案不按学校数量收费。一条强主线，多次精准适配。</span>
-      </p>
+      <p class="service-note"><span class="en">Our work is research-led: we examine target programmes, legal fields, faculty interests and the applicant’s own experience before writing or revising begins. For full-package clients, we do not charge by the number of schools; the real work is to build a strong core narrative and then adapt it intelligently to each programme.</span><span class="zh">我们的服务以研究为起点：在正式写作或修改之前，我们会先研究目标项目、相关法律方向、课程与教授资源，以及申请者自身经历中真正值得展开的问题。对于申请全案客户，我们不按学校数量设置上限；真正重要的是先搭建足够强的核心主线，再根据每个项目做有判断的适配。</span></p>
     </section>
-    <section class="pricing" id="pricing">
+
+    <section class="offer" id="offer">
       <div class="section-head">
-        <div class="section-number"><span class="en">03 / Pricing</span><span class="zh">03 / 价格</span></div>
+        <div class="section-number"><span class="en">03 / Early Bird Offer</span><span class="zh">03 / 早鸟优惠</span></div>
         <div>
-          <h2><span class="en">Private-level application work.</span><span class="zh">私人级别的申请服务。</span></h2>
-          <p class="lead"><span class="en">Full package. Unlimited schools. Early bird rate.</span><span class="zh">申请全案。不限学校。早鸟价格。</span></p>
+          <h2><span class="en">High-end bespoke service, with a 30% early bird discount.</span><span class="zh">高端定制服务，现开放30%早鸟折扣。</span></h2>
+          <p class="lead"><span class="en">Designed for applicants who want deep, research-led, school-adaptable law school application support rather than mass-market editing. Detailed pricing is shared after an initial background review.</span><span class="zh">适合希望获得深度研究型、可多校适配、非流水线式法学院申请支持的申请者。具体报价将在初步背景评估后沟通。</span></p>
         </div>
       </div>
-      <div class="price-card">
-        <div class="card-index"><span class="en">Full Package</span><span class="zh">申请全案</span></div>
-        <h3><span class="en">Research-led. Bespoke. School-adaptable.</span><span class="zh">研究驱动。高端定制。多校适配。</span></h3>
-        <div class="price-row">
-          <span class="price-old">1999 USD</span>
-          <span class="price-new">1299 USD</span>
-          <span class="price-label"><span class="en">Early Bird</span><span class="zh">早鸟价</span></span>
-        </div>
-        <p><span class="en">Core narrative, PS support, CV restructuring, recommendation strategy and programme adaptation.</span><span class="zh">核心主线、PS支持、CV重构、推荐信思路与项目适配。</span></p>
-      </div>
-    </section>
 
+      <article class="offer-card">
+        <div class="card-index"><span class="en">Full Application Package</span><span class="zh">申请全案服务</span></div>
+        <h3><span class="en">Research-led, bespoke, unlimited-school adaptation.</span><span class="zh">研究驱动，高端定制，不限学校数量适配。</span></h3>
+        <div class="discount-row"><span class="discount-main"><span class="en">30% Off</span><span class="zh">30% 折扣</span></span><span class="discount-label"><span class="en">Early Bird</span><span class="zh">早鸟优惠</span></span></div>
+        <p class="offer-note"><span class="en">The early bird offer applies to selected full-package clients after initial background review. It covers core narrative strategy, personal statement writing support, CV restructuring, programme positioning and school-specific adaptation across as many target programmes as needed.</span><span class="zh">早鸟优惠适用于完成初步背景评估后的部分申请全案客户。服务包含核心主线搭建、个人陈述写作支持、CV重构、项目定位，以及根据申请需要进行的多项目/多学校适配。真正的重点不是按学校收费，而是为你建立一套足够强的申请底层逻辑。</span></p>
+      </article>
+    </section>
 
     <section class="proof" id="proof">
       <div class="section-head">
-        <div class="section-number">
-          <span class="en">04 / Proof</span>
-          <span class="zh">04 / 反馈</span>
-        </div>
+        <div class="section-number"><span class="en">04 / Proof</span><span class="zh">04 / 评价与案例</span></div>
         <div>
-          <h2>
-            <span class="en">Praise, without noise.</span>
-            <span class="zh">不喧哗的好评。</span>
-          </h2>
-          <p class="lead">
-            <span class="en">What stays with students: depth, precision, and follow-through.</span>
-            <span class="zh">学生真正记住的：深度、精准和持续跟进。</span>
-          </p>
-          <div class="proof-header-image">
-            <img src="assets/proof-detail.jpg" alt="LEXEVA proof and client feedback detail" />
-          </div>
+          <h2><span class="en">What students say about working with LEXEVA.</span><span class="zh">学生在和LEXEVA合作后的真实感受。</span></h2>
+          <p class="lead"><span class="en">What matters most is not only the outcome, but how applicants experience the process: depth, professionalism, responsibility and serious follow-through.</span><span class="zh">真正能建立信任的，不只是结果本身，还有合作过程中的体验：专业、有深度、负责，以及真正持续跟进的能力。</span></p>
+          <div class="proof-header-image"><img src="assets/proof-detail.jpg" alt="LEXEVA proof and client feedback detail" /></div>
         </div>
       </div>
 
       <div class="proof-grid">
-        <article class="proof-card">
-          <div>
-            <div class="proof-tag">Professional</div>
-            <h3><span class="en">Professional, but not mechanical.</span><span class="zh">专业，但不是机械。</span></h3>
-            <p><span class="en">Not wording. Judgment.</span><span class="zh">不是措辞，是判断。</span></p>
-          </div>
-          <div class="quote">
-            <span class="en">“Not a normal PS edit. It felt like my application was treated as an academic project.”</span>
-            <span class="zh">“不是普通PS修改，更像有人真的把我的申请当成一个学术项目在做。”</span>
-            <small><span class="en">LLM Applicant · UK / Hong Kong applications</span><span class="zh">LLM申请人 · 英国/香港方向</span></small>
-          </div>
-        </article>
+        <article class="proof-card"><div><div class="proof-tag">Professionalism</div><h3><span class="en">Professional and unusually deep</span><span class="zh">专业，而且比我想象中更有深度</span></h3><p><span class="en">Applicants often realise that the service is not ordinary language polishing. The work keeps returning to the legal issue behind each paragraph.</span><span class="zh">很多学生在合作之后最直观的感受是：这不是普通的“改英语”。LEXEVA会不断追问，你真正的法律问题是什么、你的经历为什么值得写、这个项目为什么非你不可。</span></p></div><div class="quote"><span class="en">“I thought this would be a normal PS revision. But every paragraph was pushed back to the legal issue underneath it. It felt like someone was treating my application as a serious academic project.”</span><span class="zh">“我本来以为就是普通的PS修改，结果基本每一段都会被追问：你这里真正的法律问题是什么？为什么这段经历值得保留？这是我第一次觉得有人把我的申请当成一个严肃的学术项目在做。”</span><small><span class="en">LLM Applicant · UK / Hong Kong applications</span><span class="zh">LLM申请人 · 英国/香港方向</span></small></div></article>
 
-        <article class="proof-card">
-          <div>
-            <div class="proof-tag">Responsible</div>
-            <h3><span class="en">High-touch, not transactional.</span><span class="zh">高密度跟进，不是一次性交稿。</span></h3>
-            <p><span class="en">Careful follow-up. Repeated clarification. Real responsibility.</span><span class="zh">细节追问，持续跟进，真正负责。</span></p>
-          </div>
-          <div class="quote">
-            <span class="en">“I sent materials very late several times and still received careful follow-up. It never felt like a standard workflow.”</span>
-            <span class="zh">“有几次我很晚才补材料，凌晨都还能收到认真反馈。整个过程完全不像标准流水线。”</span>
-            <small><span class="en">26Fall Applicant · Multi-school LLM applications</span><span class="zh">26Fall申请人 · 多校LLM申请</span></small>
-          </div>
-        </article>
+        <article class="proof-card"><div><div class="proof-tag">Responsibility</div><h3><span class="en">Very responsible, with real follow-up</span><span class="zh">非常负责，而且是真的会一直跟进</span></h3><p><span class="en">Students often remember the intensity of the follow-up: fast comments, repeated clarification and a high-touch process that does not feel transactional.</span><span class="zh">很多学生最后记住的，不只是文书本身，而是跟进过程的密度：修改很快、细节追问很多、状态会被持续跟进，合作感受更像高密度顾问服务，而不是一次性交稿。</span></p></div><div class="quote"><span class="en">“What impressed me most was not just the writing quality, but how responsible the process was. There were nights when I sent updates very late and still got careful follow-up.”</span><span class="zh">“最打动我的不只是文书质量，而是他们真的很负责。有几次我很晚才把材料补过去，凌晨都还能收到认真跟进的反馈。整个过程完全不像那种把人推进标准流程就结束了的服务。”</span><small><span class="en">26Fall Applicant · Multi-school LLM applications</span><span class="zh">26Fall申请人 · 多校LLM申请</span></small></div></article>
 
-        <article class="proof-card">
-          <div>
-            <div class="proof-tag">Clear</div>
-            <h3><span class="en">The application finally made sense.</span><span class="zh">申请终于讲通了。</span></h3>
-            <p><span class="en">Scattered experience becomes one controlled direction.</span><span class="zh">零散经历，被收束成一个方向。</span></p>
-          </div>
-          <div class="quote">
-            <span class="en">“The final PS still sounded like me, just a clearer and more mature version of me.”</span>
-            <span class="zh">“最后那版PS还是我的声音，但像一个更清楚、更成熟的我。”</span>
-            <small><span class="en">Law applicant · AI Law / Technology Regulation track</span><span class="zh">法学院申请人 · AI Law/科技监管方向</span></small>
-          </div>
-        </article>
+        <article class="proof-card"><div><div class="proof-tag">Clarity</div><h3><span class="en">My application finally made sense</span><span class="zh">我的申请终于“讲通了”</span></h3><p><span class="en">Applicants often arrive with internships, courses and interests that feel scattered. The work is to turn those fragments into a narrative that feels coherent and personally convincing.</span><span class="zh">反馈里最常见的关键词其实是“讲通了”。很多申请人一开始的经历都很散，律所、法务、课程、论文、比赛各有一点，但最后能够被整理成一条真正成立的申请主线。</span></p></div><div class="quote"><span class="en">“Before working with LEXEVA, my materials were all over the place. After the revision, I finally understood what my application was actually about. The final PS sounded like me, but a more mature version of me.”</span><span class="zh">“跟LEXEVA合作之前，我的材料真的是散的，自己都不知道到底想表达什么。修改完之后，我第一次明白自己的申请到底在讲什么。最后那版PS还是我的声音，但像一个更成熟、更清楚自己要什么的我。”</span><small><span class="en">Law Applicant · AI Law / Corporate / Technology law direction</span><span class="zh">法学院申请人 · AI Law/公司法/科技法方向</span></small></div></article>
       </div>
     </section>
 
     <section class="faq" id="faq">
-      <div class="section-head">
-        <div class="section-number"><span class="en">05 / FAQ</span><span class="zh">05 / 常见问题</span></div>
-        <h2><span class="en">Clear boundaries.</span><span class="zh">清晰边界。</span></h2>
-      </div>
-
+      <div class="section-head"><div class="section-number"><span class="en">05 / FAQ</span><span class="zh">05 / 常见问题</span></div><h2><span class="en">Clear boundaries make better cooperation.</span><span class="zh">清晰的服务边界，才能带来更稳定的合作。</span></h2></div>
       <div class="faq-grid">
-        <article class="faq-item">
-          <h3><span class="en">Do you limit the number of schools?</span><span class="zh">申请全案是否限制学校数量？</span></h3>
-          <p><span class="en">No. For the full application package, we do not set a school-number cap. Once the core application narrative is established, we adapt the materials to each target programme with school-specific research and positioning.</span><span class="zh">不限制。对于申请全案客户，我们不会按学校数量设置上限。核心主线确定后，我们会根据每个目标项目的课程、学院特色和申请要求继续做针对性适配。</span></p>
-        </article>
-
-        <article class="faq-item">
-          <h3><span class="en">Do you guarantee admission?</span><span class="zh">是否保证录取？</span></h3>
-          <p><span class="en">No. Admission depends on academic background, GPA, recommendation letters, writing samples, competition and university discretion. Our role is to maximise the quality, coherence and persuasiveness of the application materials.</span><span class="zh">不保证，也不应承诺保证。录取结果受本科背景、GPA、推荐信、writing sample、竞争年份和学校独立判断影响。我们的工作是尽可能提升材料质量、逻辑完整性和说服力。</span></p>
-        </article>
-
-        <article class="faq-item">
-          <h3><span class="en">How are you different from large agencies?</span><span class="zh">和大型机构有什么不同？</span></h3>
-          <p><span class="en">LEXEVA operates as a boutique advisory studio. We focus on research-driven writing, individual strategy and legal narrative construction rather than standardised document production.</span><span class="zh">LEXEVA更接近精品顾问工作室，重点在研究型写作、个案策略和法律叙事搭建，而不是标准化批量生产。</span></p>
-        </article>
-
-        <article class="faq-item">
-          <h3><span class="en">What materials should I provide?</span><span class="zh">我需要提供什么材料？</span></h3>
-          <p><span class="en">CV, transcript, target schools, application timeline, prior drafts if any, internship or work experience, research interests and career plans are helpful for the initial review.</span><span class="zh">建议提供简历、成绩单、目标学校、申请时间线、已有文书、实习或工作经历、研究兴趣和职业规划，方便我们进行初步判断。</span></p>
-        </article>
+        <article class="faq-item"><h3><span class="en">Do you limit the number of schools?</span><span class="zh">申请全案是否限制学校数量？</span></h3><p><span class="en">No. For the full application package, we do not set a school-number cap. Once the core narrative is established, we adapt the materials to each target programme.</span><span class="zh">不限制。对于申请全案客户，我们不会按学校数量设置上限。核心主线确定后，我们会根据每个目标项目的课程、学院特色和申请要求继续做针对性适配。</span></p></article>
+        <article class="faq-item"><h3><span class="en">Do you guarantee admission?</span><span class="zh">是否保证录取？</span></h3><p><span class="en">No. Admission depends on academic background, GPA, recommendation letters, writing samples, competition and university discretion. Our role is to maximise the quality and persuasiveness of the application materials.</span><span class="zh">不保证，也不应承诺保证。录取结果受本科背景、GPA、推荐信、writing sample、竞争年份和学校独立判断影响。我们的工作是尽可能提升材料质量、逻辑完整性和说服力。</span></p></article>
+        <article class="faq-item"><h3><span class="en">How are you different from large agencies?</span><span class="zh">和大型机构有什么不同？</span></h3><p><span class="en">LEXEVA operates as a boutique advisory studio. We focus on research-driven writing, individual strategy and legal narrative construction rather than standardised document production.</span><span class="zh">LEXEVA更接近精品顾问工作室，重点在研究型写作、个案策略和法律叙事搭建，而不是标准化批量生产。</span></p></article>
+        <article class="faq-item"><h3><span class="en">What materials should I provide?</span><span class="zh">我需要提供什么材料？</span></h3><p><span class="en">CV, transcript, target schools, application timeline, prior drafts if any, internship or work experience, research interests and career plans are helpful for the initial review.</span><span class="zh">建议提供简历、成绩单、目标学校、申请时间线、已有文书、实习或工作经历、研究兴趣和职业规划，方便我们进行初步判断。</span></p></article>
       </div>
     </section>
 
@@ -1311,37 +1177,16 @@
       <div class="contact-box">
         <div>
           <div class="eyebrow"><span class="en">06 / Contact</span><span class="zh">06 / 联系我们</span></div>
-          <h2><span class="en">Begin with 15 minutes.</span><span class="zh">先聊15分钟。</span></h2>
-          <p><span class="en">A complimentary call to assess direction, readiness and fit.</span><span class="zh">免费初步沟通，判断方向、材料状态和服务匹配度。</span></p>
-          <ul>
-            <li><span class="en">Send your CV, target programmes and application timeline before the call</span><span class="zh">建议提前提交简历、目标项目和申请时间线</span></li>
-            <li><span class="en">Receive an initial view on application direction and document readiness</span><span class="zh">获得初步申请方向判断与材料状态评估</span></li>
-            <li><span class="en">The consultation is not a full draft review or unlimited Q&A session</span><span class="zh">免费咨询不等同于完整审稿或无限问答</span></li>
-          </ul>
+          <h2><span class="en">Start with a free 15-minute initial consultation.</span><span class="zh">先用15分钟，判断你的申请主线。</span></h2>
+          <p><span class="en">For prospective applicants, LEXEVA offers a complimentary 15-minute initial consultation to assess application direction, material readiness and potential service fit.</span><span class="zh">针对有明确申请计划的同学，LEXEVA提供一次免费15分钟初步咨询，用于判断申请方向、材料准备状态和服务匹配度。</span></p>
+          <ul><li><span class="en">Send your CV, target programmes and application timeline before the call</span><span class="zh">建议提前提交简历、目标项目和申请时间线</span></li><li><span class="en">Receive an initial view on application direction and document readiness</span><span class="zh">获得初步申请方向判断与材料状态评估</span></li><li><span class="en">The consultation is not a full draft review or unlimited Q&A session</span><span class="zh">免费咨询不等同于完整审稿或无限问答</span></li></ul>
           <a class="btn" href="mailto:lexeva@163.com"><span class="en">Book by Email</span><span class="zh">邮件预约咨询</span></a>
         </div>
-
-        <div class="contact-panel">
-          <div class="contact-row">
-            <small>Email</small>
-            <a href="mailto:lexeva@163.com">lexeva@163.com</a>
-          </div>
-          <div class="contact-row">
-            <small>WeChat</small>
-            <span>Lexevangelion</span>
-          </div>
-          <div class="contact-row">
-            <small><span class="en">Initial Inquiry</span><span class="zh">初步咨询建议提交</span></small>
-            <span><span class="en">CV · Transcript · Target Schools · Application Year · Draft Materials</span><span class="zh">简历 · 成绩单 · 目标学校 · 申请年份 · 已有文书</span></span>
-          </div>
-        </div>
+        <div class="contact-panel"><div class="contact-row"><small>Email</small><a href="mailto:lexeva@163.com">lexeva@163.com</a></div><div class="contact-row"><small>WeChat</small><span>Lexevangelion</span></div><div class="contact-row"><small><span class="en">Initial Inquiry</span><span class="zh">初步咨询建议提交</span></small><span><span class="en">CV · Transcript · Target Schools · Application Year · Draft Materials</span><span class="zh">简历 · 成绩单 · 目标学校 · 申请年份 · 已有文书</span></span></div></div>
       </div>
     </section>
 
-    <footer>
-      <span>© 2026 LEXEVA. All rights reserved.</span>
-      <span><span class="en">Law School Applications · Legal Writing · Student Development</span><span class="zh">法学院申请 · 法律写作 · 背景提升</span></span>
-    </footer>
+    <footer><span>© 2026 LEXEVA. All rights reserved.</span><span><span class="en">Law School Applications · Legal Writing · Student Development</span><span class="zh">法学院申请 · 法律写作 · 背景提升</span></span></footer>
   </div>
 
   <script>
