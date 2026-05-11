@@ -7,6 +7,9 @@
   <meta name="description" content="LEXEVA provides high-end bespoke law school application strategy, research-led legal writing, personal statement revision and law school application support for LLM, JD and MJur applicants." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.lexevaglobal.com/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png?v=4" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=4" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png?v=4" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,8 +228,95 @@
       background: var(--gold);
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(42px);
+      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.visible,
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .hero h1,
+      .hero .hero-copy,
+      .hero .hero-actions,
+      .hero .bespoke-strip,
+      .hero-visual,
+      .hero-photo {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .hero-copy,
+    .hero .hero-actions,
+    .hero .bespoke-strip {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero .eyebrow {
+      animation-delay: 0.05s;
+    }
+
+    .hero h1 {
+      animation-delay: 0.1s;
+    }
+
+    .hero .hero-copy {
+      animation-delay: 0.25s;
+    }
+
+    .hero .hero-actions {
+      animation-delay: 0.4s;
+    }
+
+    .hero .bespoke-strip {
+      animation-delay: 0.55s;
+    }
+
+    .hero-visual {
+      opacity: 0;
+      transform: translateY(34px) scale(0.96);
+      animation: heroVisualIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.35s;
+    }
+
+    @keyframes heroFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroVisualIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes slowZoom {
+      from {
+        transform: scale(1.02);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+
     .hero {
-      min-height: 100vh;
       display: grid;
       grid-template-columns: 1.04fr 0.96fr;
       align-items: center;
@@ -328,6 +418,7 @@
       object-fit: cover;
       filter: brightness(0.62) saturate(0.95);
       transform: scale(1.02);
+      animation: slowZoom 14s ease-in-out infinite alternate;
     }
 
     .hero-overlay {
@@ -337,27 +428,10 @@
       padding: 48px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
       background:
-        linear-gradient(180deg, rgba(17, 23, 21, 0.25), rgba(17, 23, 21, 0.82)),
-        radial-gradient(circle at 72% 18%, rgba(201, 162, 74, 0.18), transparent 34%);
-    }
-
-    .visual-logo-box {
-      position: relative;
-      z-index: 2;
-      background: rgba(247, 244, 238, 0.92);
-      padding: 6px 10px;
-      width: min(380px, 84%);
-      border: 1px solid rgba(201, 162, 74, 0.55);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
-      backdrop-filter: blur(6px);
-    }
-
-    .visual-logo-box img {
-      width: 100%;
-      height: auto;
-      display: block;
+        linear-gradient(180deg, rgba(17, 23, 21, 0.08), rgba(17, 23, 21, 0.84)),
+        radial-gradient(circle at 72% 18%, rgba(201, 162, 74, 0.12), transparent 34%);
     }
 
     .visual-statement {
@@ -483,9 +557,10 @@
     .service-card:hover,
     .proof-card:hover,
     .offer-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: rgba(201, 162, 74, 0.86);
       background: rgba(247, 244, 238, 0.98);
+      box-shadow: 0 24px 70px rgba(17, 23, 21, 0.12);
     }
 
     .team-card {
@@ -1035,10 +1110,6 @@
       <aside class="hero-visual">
         <img class="hero-photo" src="assets/hero-study.jpg" alt="LEXEVA research-led application writing desk" />
         <div class="hero-overlay">
-          <div class="visual-logo-box">
-            <img src="assets/lexeva-logo.jpg" alt="LEXEVA logo" />
-          </div>
-
           <div class="visual-statement">
             <p><span class="en">Depth comes from research, not decoration.</span><span class="zh">深度来自研究，而不是包装。</span></p>
             <p><span class="en">A strong application is not a decorated biography. It is a disciplined argument about intellectual direction, legal potential and programme fit.</span><span class="zh">真正有效的申请材料，不是精致包装过的经历清单，而是一套关于学术方向、法律潜力和项目匹配度的申请论证。</span></p>
@@ -1047,7 +1118,7 @@
       </aside>
     </header>
 
-    <section id="about">
+    <section id="about" class="reveal">
       <div class="section-head">
         <div class="section-number"><span class="en">01 / About & Team</span><span class="zh">01 / 关于团队</span></div>
         <div>
@@ -1101,7 +1172,7 @@
       </div>
     </section>
 
-    <section class="services" id="services">
+    <section class="services reveal" id="services">
       <div class="section-head">
         <div class="section-number"><span class="en">02 / Services</span><span class="zh">02 / 服务内容</span></div>
         <h2><span class="en">Three high-end bespoke ways we support law school applicants.</span><span class="zh">三类高端定制服务，支持不同阶段的法学院申请者。</span></h2>
@@ -1127,7 +1198,7 @@
       <p class="service-note"><span class="en">Our work is research-led: we examine target programmes, legal fields, faculty interests and the applicant’s own experience before writing or revising begins. For full-package clients, we do not charge by the number of schools; the real work is to build a strong core narrative and then adapt it intelligently to each programme.</span><span class="zh">我们的服务以研究为起点：在正式写作或修改之前，我们会先研究目标项目、相关法律方向、课程与教授资源，以及申请者自身经历中真正值得展开的问题。对于申请全案客户，我们不按学校数量设置上限；真正重要的是先搭建足够强的核心主线，再根据每个项目做有判断的适配。</span></p>
     </section>
 
-    <section class="offer" id="offer">
+    <section class="offer reveal" id="offer">
       <div class="section-head">
         <div class="section-number"><span class="en">03 / Early Bird Offer</span><span class="zh">03 / 早鸟优惠</span></div>
         <div>
@@ -1144,7 +1215,7 @@
       </article>
     </section>
 
-    <section class="proof" id="proof">
+    <section class="proof reveal" id="proof">
       <div class="section-head">
         <div class="section-number"><span class="en">04 / Proof</span><span class="zh">04 / 评价与案例</span></div>
         <div>
@@ -1163,7 +1234,7 @@
       </div>
     </section>
 
-    <section class="faq" id="faq">
+    <section class="faq reveal" id="faq">
       <div class="section-head"><div class="section-number"><span class="en">05 / FAQ</span><span class="zh">05 / 常见问题</span></div><h2><span class="en">Clear boundaries make better cooperation.</span><span class="zh">清晰的服务边界，才能带来更稳定的合作。</span></h2></div>
       <div class="faq-grid">
         <article class="faq-item"><h3><span class="en">Do you limit the number of schools?</span><span class="zh">申请全案是否限制学校数量？</span></h3><p><span class="en">No. For the full application package, we do not set a school-number cap. Once the core narrative is established, we adapt the materials to each target programme.</span><span class="zh">不限制。对于申请全案客户，我们不会按学校数量设置上限。核心主线确定后，我们会根据每个目标项目的课程、学院特色和申请要求继续做针对性适配。</span></p></article>
@@ -1173,7 +1244,7 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact reveal" id="contact">
       <div class="contact-box">
         <div>
           <div class="eyebrow"><span class="en">06 / Contact</span><span class="zh">06 / 联系我们</span></div>
@@ -1186,7 +1257,7 @@
       </div>
     </section>
 
-    <footer><span>© 2026 LEXIA EVANA ATELIER. All rights reserved.</span><span><span class="en">Law School Applications · Legal Writing · Student Development</span><span class="zh">法学院申请 · 法律写作 · 背景提升</span></span></footer>
+    <footer><span>© 2026 LEXEVA. All rights reserved.</span><span><span class="en">Law School Applications · Legal Writing · Student Development</span><span class="zh">法学院申请 · 法律写作 · 背景提升</span></span></footer>
   </div>
 
   <script>
@@ -1207,6 +1278,37 @@
     const savedLanguage = localStorage.getItem('lexevaLanguage');
     if (savedLanguage === 'zh' || savedLanguage === 'en') {
       setLanguage(savedLanguage);
+    }
+
+    document.body.classList.add('page-ready');
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      revealElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.92) {
+          element.classList.add('visible');
+        } else {
+          revealObserver.observe(element);
+        }
+      });
+    } else {
+      revealElements.forEach((element) => {
+        element.classList.add('visible');
+      });
     }
   </script>
 </body>
