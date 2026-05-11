@@ -7,9 +7,12 @@
   <meta name="description" content="LEXEVA provides high-end bespoke law school application strategy, research-led legal writing, personal statement revision and law school application support for LLM, JD and MJur applicants." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.lexevaglobal.com/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png?v=4" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=4" />
-  <link rel="apple-touch-icon" href="/assets/favicon.png?v=4" />
+  <!-- Favicon: use relative paths for GitHub Pages/custom-domain compatibility.
+       Make sure the file is located at: assets/favicon.png -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=20260511" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png?v=20260511" />
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png?v=20260511" />
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=20260511" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,6 +244,46 @@
       transform: translateY(0);
     }
 
+    .reveal .team-intro,
+    .reveal .team-card,
+    .reveal .service-card,
+    .reveal .offer-card,
+    .reveal .proof-card,
+    .reveal .faq-item,
+    .reveal .contact-box {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible .team-intro,
+    .reveal.visible .team-card,
+    .reveal.visible .service-card,
+    .reveal.visible .offer-card,
+    .reveal.visible .proof-card,
+    .reveal.visible .faq-item,
+    .reveal.visible .contact-box {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.visible .team-card:nth-child(1),
+    .reveal.visible .service-card:nth-child(1),
+    .reveal.visible .proof-card:nth-child(1),
+    .reveal.visible .faq-item:nth-child(1) { transition-delay: 0.06s; }
+
+    .reveal.visible .team-card:nth-child(2),
+    .reveal.visible .service-card:nth-child(2),
+    .reveal.visible .proof-card:nth-child(2),
+    .reveal.visible .faq-item:nth-child(2) { transition-delay: 0.14s; }
+
+    .reveal.visible .team-card:nth-child(3),
+    .reveal.visible .service-card:nth-child(3),
+    .reveal.visible .proof-card:nth-child(3),
+    .reveal.visible .faq-item:nth-child(3) { transition-delay: 0.22s; }
+
+    .reveal.visible .faq-item:nth-child(4) { transition-delay: 0.3s; }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal,
       .hero h1,
@@ -248,7 +291,14 @@
       .hero .hero-actions,
       .hero .bespoke-strip,
       .hero-visual,
-      .hero-photo {
+      .hero-photo,
+      .reveal .team-intro,
+      .reveal .team-card,
+      .reveal .service-card,
+      .reveal .offer-card,
+      .reveal .proof-card,
+      .reveal .faq-item,
+      .reveal .contact-box {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
@@ -262,8 +312,8 @@
     .hero .hero-actions,
     .hero .bespoke-strip {
       opacity: 0;
-      transform: translateY(28px);
-      animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      transform: translateY(42px);
+      animation: heroFadeUp 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .hero .eyebrow {
@@ -288,7 +338,7 @@
 
     .hero-visual {
       opacity: 0;
-      transform: translateY(34px) scale(0.96);
+      transform: translateY(46px) scale(0.94);
       animation: heroVisualIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       animation-delay: 0.35s;
     }
@@ -418,7 +468,7 @@
       object-fit: cover;
       filter: brightness(0.62) saturate(0.95);
       transform: scale(1.02);
-      animation: slowZoom 14s ease-in-out infinite alternate;
+      animation: slowZoom 18s ease-in-out infinite alternate;
     }
 
     .hero-overlay {
@@ -1047,6 +1097,204 @@
         padding: 28px 24px;
       }
     }
+
+    @media (max-width: 760px) {
+      .nav {
+        gap: 12px;
+      }
+
+      .nav-right {
+        gap: 10px;
+      }
+
+      .lang-switch button {
+        padding: 7px 8px;
+        font-size: 11px;
+      }
+
+      .hero {
+        gap: 34px;
+        padding-top: 106px;
+        padding-bottom: 64px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 52px);
+        line-height: 0.98;
+        margin-bottom: 22px;
+      }
+
+      body.lang-zh h1 {
+        font-size: clamp(34px, 9.8vw, 42px);
+        line-height: 1.16;
+      }
+
+      .hero-copy {
+        font-size: 15.5px;
+        line-height: 1.78;
+        margin-bottom: 28px;
+      }
+
+      body.lang-zh .hero-copy {
+        font-size: 15.5px;
+        line-height: 1.9;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 18px;
+      }
+
+      .bespoke-strip {
+        margin-top: 22px;
+        padding: 15px 16px;
+        font-size: 14.5px;
+        line-height: 1.72;
+      }
+
+      .hero-visual {
+        min-height: 330px;
+      }
+
+      .hero-overlay {
+        padding: 26px;
+      }
+
+      .visual-statement p:first-child {
+        font-size: 28px;
+      }
+
+      .visual-statement p:last-child {
+        font-size: 14px;
+        line-height: 1.68;
+      }
+
+      section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+
+      .section-head {
+        gap: 20px;
+        margin-bottom: 34px;
+      }
+
+      h2 {
+        font-size: clamp(35px, 10vw, 44px);
+        line-height: 1.04;
+      }
+
+      body.lang-zh h2 {
+        font-size: clamp(31px, 8.8vw, 40px);
+        line-height: 1.2;
+      }
+
+      .lead {
+        font-size: 15.5px;
+        line-height: 1.82;
+        margin-top: 18px;
+      }
+
+      body.lang-zh .lead {
+        font-size: 15.5px;
+        line-height: 1.92;
+      }
+
+      .team-intro-copy p,
+      .team-card p,
+      .service-card p,
+      .proof-card p,
+      .faq-item p,
+      .offer-card p {
+        font-size: 15px;
+        line-height: 1.76;
+      }
+
+      .team-card h3,
+      .service-card h3,
+      .proof-card h3,
+      .offer-card h3 {
+        font-size: 30px;
+      }
+
+      .faq-item h3 {
+        font-size: 24px;
+      }
+
+      .proof-header-image img {
+        height: 220px;
+      }
+
+      .quote {
+        font-size: 21px;
+      }
+
+      body.lang-zh .quote {
+        font-size: 18.5px;
+      }
+
+      .contact-box {
+        gap: 28px;
+      }
+
+      .contact-box::after {
+        font-size: 150px;
+        right: 18px;
+        bottom: -34px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav {
+        padding: 13px 16px;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .brand img {
+        width: 108px;
+      }
+
+      .lang-switch button {
+        padding: 6px 7px;
+        letter-spacing: 0.04em;
+      }
+
+      .hero,
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .hero {
+        padding-top: 96px;
+      }
+
+      .team-intro-copy,
+      .team-card,
+      .service-card,
+      .proof-card,
+      .contact-box,
+      .contact-panel,
+      .faq-item,
+      .offer-card {
+        padding: 22px;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1293,8 +1541,8 @@
           }
         });
       }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -8% 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -4% 0px'
       });
 
       revealElements.forEach((element) => {
