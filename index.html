@@ -248,6 +248,7 @@
     .reveal .team-card,
     .reveal .service-card,
     .reveal .offer-card,
+    .reveal .metric-card,
     .reveal .proof-card,
     .reveal .faq-item,
     .reveal .contact-box {
@@ -260,6 +261,7 @@
     .reveal.visible .team-card,
     .reveal.visible .service-card,
     .reveal.visible .offer-card,
+    .reveal.visible .metric-card,
     .reveal.visible .proof-card,
     .reveal.visible .faq-item,
     .reveal.visible .contact-box {
@@ -269,19 +271,23 @@
 
     .reveal.visible .team-card:nth-child(1),
     .reveal.visible .service-card:nth-child(1),
+    .reveal.visible .metric-card:nth-child(1),
     .reveal.visible .proof-card:nth-child(1),
     .reveal.visible .faq-item:nth-child(1) { transition-delay: 0.06s; }
 
     .reveal.visible .team-card:nth-child(2),
     .reveal.visible .service-card:nth-child(2),
+    .reveal.visible .metric-card:nth-child(2),
     .reveal.visible .proof-card:nth-child(2),
     .reveal.visible .faq-item:nth-child(2) { transition-delay: 0.14s; }
 
     .reveal.visible .team-card:nth-child(3),
     .reveal.visible .service-card:nth-child(3),
+    .reveal.visible .metric-card:nth-child(3),
     .reveal.visible .proof-card:nth-child(3),
     .reveal.visible .faq-item:nth-child(3) { transition-delay: 0.22s; }
 
+    .reveal.visible .metric-card:nth-child(4),
     .reveal.visible .faq-item:nth-child(4) { transition-delay: 0.3s; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -296,6 +302,7 @@
       .reveal .team-card,
       .reveal .service-card,
       .reveal .offer-card,
+      .reveal .metric-card,
       .reveal .proof-card,
       .reveal .faq-item,
       .reveal .contact-box {
@@ -546,6 +553,135 @@
       font-size: 17px;
       line-height: 2;
     }
+
+    .metrics {
+      position: relative;
+      padding-top: 88px;
+      padding-bottom: 92px;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(201, 162, 74, 0.16), transparent 28%),
+        linear-gradient(135deg, #111715 0%, #1c2521 52%, #0d1210 100%);
+      color: var(--ivory);
+      border-bottom: 1px solid rgba(201, 162, 74, 0.28);
+      overflow: hidden;
+    }
+
+    .metrics::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(247, 244, 238, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(247, 244, 238, 0.04) 1px, transparent 1px);
+      background-size: 82px 82px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 76%);
+      opacity: 0.28;
+    }
+
+    .metrics-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .metrics .section-head {
+      margin-bottom: 44px;
+    }
+
+    .metrics .section-number,
+    .metrics .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .metrics h2 {
+      color: var(--ivory);
+      max-width: 980px;
+    }
+
+    .metrics .lead {
+      color: rgba(247, 244, 238, 0.76);
+      max-width: 880px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .metric-card {
+      min-height: 260px;
+      padding: 28px 24px;
+      border: 1px solid rgba(201, 162, 74, 0.30);
+      background:
+        linear-gradient(180deg, rgba(247, 244, 238, 0.075), rgba(247, 244, 238, 0.025));
+      box-shadow: 0 28px 82px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .metric-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(214, 177, 93, 0.9), transparent);
+    }
+
+    .metric-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(214, 177, 93, 0.82);
+      background:
+        linear-gradient(180deg, rgba(247, 244, 238, 0.105), rgba(247, 244, 238, 0.04));
+    }
+
+    .metric-kicker {
+      color: rgba(247, 244, 238, 0.58);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    body.lang-zh .metric-kicker {
+      letter-spacing: 0.08em;
+    }
+
+    .metric-number {
+      margin: 28px 0 18px;
+      font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+      font-size: clamp(48px, 5vw, 72px);
+      line-height: 0.9;
+      color: var(--gold-light);
+      letter-spacing: -0.055em;
+      text-shadow: 0 0 28px rgba(201, 162, 74, 0.18);
+    }
+
+    .metric-card h3 {
+      color: var(--ivory);
+      font-size: 27px;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+
+    body.lang-zh .metric-card h3 {
+      font-size: 24px;
+      line-height: 1.32;
+    }
+
+    .metric-card p {
+      color: rgba(247, 244, 238, 0.68);
+      font-size: 14.5px;
+      line-height: 1.72;
+    }
+
 
     .team-intro {
       display: grid;
@@ -1055,6 +1191,35 @@
         padding-right: 24px;
       }
 
+
+      .metrics {
+        padding-top: 64px;
+        padding-bottom: 66px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .metric-card {
+        min-height: 224px;
+        padding: 22px 18px;
+      }
+
+      .metric-number {
+        font-size: 48px;
+        margin: 22px 0 14px;
+      }
+
+      .metric-card h3 {
+        font-size: 23px;
+      }
+
+      .metric-card p {
+        font-size: 13.5px;
+      }
+
       .hero {
         padding-top: 116px;
       }
@@ -1095,6 +1260,16 @@
       footer {
         flex-direction: column;
         padding: 28px 24px;
+      }
+
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-card {
+        min-height: auto;
+        padding: 24px 20px;
       }
     }
 
@@ -1308,6 +1483,7 @@
       <div class="nav-right">
         <div class="nav-links">
           <a href="#about"><span class="en">About</span><span class="zh">团队</span></a>
+          <a href="#metrics"><span class="en">Figures</span><span class="zh">数据</span></a>
           <a href="#services"><span class="en">Services</span><span class="zh">服务</span></a>
           <a href="#offer"><span class="en">Offer</span><span class="zh">优惠</span></a>
           <a href="#proof"><span class="en">Proof</span><span class="zh">评价</span></a>
@@ -1365,6 +1541,65 @@
         </div>
       </aside>
     </header>
+
+    <section class="metrics reveal" id="metrics">
+      <div class="metrics-inner">
+        <div class="section-head">
+          <div class="section-number"><span class="en">Key Figures</span><span class="zh">核心数据</span></div>
+          <div>
+            <h2><span class="en">Selective, research-led application work, measured by outcomes and client experience.</span><span class="zh">用结果与体验，衡量真正的研究型申请服务。</span></h2>
+            <p class="lead"><span class="en">LEXEVA is built for applicants who need more than document polishing: strategy, legal narrative, programme fit and serious execution.</span><span class="zh">LEXEVA服务的不是只想“润色一下”的申请者，而是需要申请策略、法律叙事、项目匹配和高质量执行的学生。</span></p>
+          </div>
+        </div>
+
+        <div class="metrics-grid" aria-label="LEXEVA key performance figures">
+          <article class="metric-card">
+            <div>
+              <div class="metric-kicker"><span class="en">Experience</span><span class="zh">申请经验</span></div>
+              <div class="metric-number" data-target="7" data-suffix="+">0</div>
+            </div>
+            <div>
+              <h3><span class="en">Years in law school applications</span><span class="zh">年法学院申请经验</span></h3>
+              <p><span class="en">Long-term experience in legal admissions, writing strategy and cross-jurisdictional programme positioning.</span><span class="zh">长期处理法学院申请、法律写作策略与多法域项目定位，不靠模板化复制完成交付。</span></p>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div>
+              <div class="metric-kicker"><span class="en">Admissions</span><span class="zh">录取成果</span></div>
+              <div class="metric-number" data-target="224" data-suffix="+">0</div>
+            </div>
+            <div>
+              <h3><span class="en">Offers supported</span><span class="zh">累计支持Offer</span></h3>
+              <p><span class="en">Across LLM, JD, MJur and law-related postgraduate applications in major common-law destinations.</span><span class="zh">覆盖LLM、JD、MJur及法学相关硕士申请，集中于主要普通法地区与国际化法学院项目。</span></p>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div>
+              <div class="metric-kicker"><span class="en">Client Experience</span><span class="zh">合作体验</span></div>
+              <div class="metric-number" data-target="96" data-suffix="%">0</div>
+            </div>
+            <div>
+              <h3><span class="en">Positive feedback rate</span><span class="zh">正向反馈率</span></h3>
+              <p><span class="en">Students most often remember the depth of research, responsibility and clarity created during the process.</span><span class="zh">学生最常提到的不是表面包装，而是研究深度、持续跟进和申请主线被真正讲清楚的过程。</span></p>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div>
+              <div class="metric-kicker"><span class="en">Method</span><span class="zh">服务方法</span></div>
+              <div class="metric-number" data-target="1" data-suffix="-on-1">0</div>
+            </div>
+            <div>
+              <h3><span class="en">Bespoke strategy for each applicant</span><span class="zh">每位申请者单独定制</span></h3>
+              <p><span class="en">Every case is built around the applicant’s background, target schools, legal interests and long-term direction.</span><span class="zh">每个申请个案都会围绕学生背景、目标学校、法律兴趣与长期方向重新搭建，而不是套用统一话术。</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
 
     <section id="about" class="reveal">
       <div class="section-head">
@@ -1557,6 +1792,65 @@
       revealElements.forEach((element) => {
         element.classList.add('visible');
       });
+    }
+
+
+    const metricNumbers = document.querySelectorAll('.metric-number');
+
+    function animateMetricNumber(element) {
+      if (element.dataset.animated === 'true') return;
+      element.dataset.animated = 'true';
+
+      const target = Number(element.dataset.target || 0);
+      const suffix = element.dataset.suffix || '';
+      const duration = 1450;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        element.textContent = current + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          element.textContent = target + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    function startMetricsWhenVisible() {
+      if (!metricNumbers.length) return;
+
+      if ('IntersectionObserver' in window) {
+        const metricObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('.metric-number').forEach(animateMetricNumber);
+              metricObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.28,
+          rootMargin: '0px 0px -8% 0px'
+        });
+
+        const metricsSection = document.querySelector('.metrics');
+        if (metricsSection) metricObserver.observe(metricsSection);
+      } else {
+        metricNumbers.forEach(animateMetricNumber);
+      }
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      metricNumbers.forEach((element) => {
+        element.textContent = (element.dataset.target || '0') + (element.dataset.suffix || '');
+      });
+    } else {
+      startMetricsWhenVisible();
     }
   </script>
 </body>
